@@ -6,3 +6,44 @@
   width: 100%;
 }
 
+.green-markers {
+  color: green;
+  line-height: .25;
+  font-size: smaller;
+}
+
+.yellow-markers {
+  color: yellow;
+  line-height: .25;
+  font-size: smaller;
+}
+
+.orange-markers {
+  color: orange;
+  line-height: .25;
+  font-size: smaller;
+}
+
+.red-markers {
+  color: red;
+  line-height: .25;
+  font-size: smaller;
+}
+
+.legend {
+  font-size: small;
+}
+
+.marker-count {
+  color: black;
+  line-height: .25;
+  font-size: smaller;
+}
+
+.legend-header {
+  color: black;
+  font-size: smaller;
+  line-height: .25;
+  font-weight: bold;
+}
+

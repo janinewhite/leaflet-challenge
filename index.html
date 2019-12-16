@@ -5,37 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Significant Earthquakes</title>
+    <meta name="description" content="Significant earthquakes for the last 30 days">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/leaflet.extra-markers.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+<!-- Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css">
+<!-- Icons -->
+<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://janinewhite.github.io/leaflet-challenge/assets/css/leaflet.extra-markers.min.css">
 </head>
 
-<body>
+<body style="background-image: url(&quot;assets/img/seismograph_large.jpg&quot;);">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">Janine White</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div class="container"><a class="navbar-brand" href="#">Janine White</a><a id="email-link" href="mailto:janine.white@gmail.com"><i class="icon ion-ios-email-outline" id="email-icon" alt="Email" style="color: black;"></i></a><a id="avatar-link" href="https://github.com/janinewhite"><img class="border rounded-circle img-profile" src="assets/img/Avatar%20White%20100px.png" alt="Janine White Headshot" width="50px" style="margin-right: 15px;"></a></div>
     </nav>
-    <div style="padding: 50px;">
-        <h1>Significant Earthquakes</h1>
-        <p>Significant earthquakes in the last 30 days as reported by&nbsp;<a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS</a></p>
+    <div style="padding: 15px;padding-bottom: 0px;">
+        <h3 style="background-color: white;width: 520px;">Significant Earthquakes</h3>
+        <p style="background-color: white;width: 520px;">Significant earthquakes in the last 30 days as reported by&nbsp;<a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank">USGS</a></p>
     </div>
-    <div id="map-id" style="padding: 50px;"></div>
+    <div id="map-id" style="padding: 15px;height: 390px;width: 520px;margin-left: 15px;"></div>
+    <div>
+        <p style="font-size: 10px;margin-top: 7px;margin-left: 15px;background-color: white;width: 520px;"><a href="https://www.flickr.com/photos/hitchster/6067747103" target="_blank">Hitchster seismograph</a>&nbsp;under&nbsp;<a href="https://creativecommons.org/licenses/by/4.0" target="_blank">Creative Commons BY 4.0</a>&nbsp;license</p>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    <script src="https://janinewhite.github.io/leaflet-challenge/assets/js/leaflet.extra-markers.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/moment.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/logic.js"></script>
 </body>

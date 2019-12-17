@@ -14,6 +14,7 @@ var lightmap = L.tileLayer(tileURL, {
 
 // Initialize LayerGroups
 var layers = {
+    MAGNITUDE: new L.LayerGroup(),
     GREEN: new L.LayerGroup(),
     YELLOW: new L.LayerGroup(),
     ORANGE: new L.LayerGroup(),
@@ -27,6 +28,7 @@ var map = L.map("map-id", {
     zoom: 1,
     layers: [
         lightmap,
+        layers.MAGNITUDE,
         layers.GREEN,
         layers.YELLOW,
         layers.ORANGE,
@@ -40,6 +42,7 @@ lightmap.addTo(map);
 
 // Create overlays obejct for layer control
 var overlays = {
+    "Magnitude": layers.MAGNITUDE,
     "Green": layers.GREEN,
     "Yellow": layers.YELLOW,
     "Orange": layers.ORANGE,
@@ -99,13 +102,22 @@ d3.json(significant_earthquakes_url, function(earthquakesRes){
             // Create marker for earthquake
             var longitude = quake.geometry.coordinates[0];
             var latitude = quake.geometry.coordinates[1];
-            var newMarker = L.marker([latitude, longitude], {
+            var latlong = [latitude, longitude];
+            var newMarker = L.marker(latlong, {
                 icon: icons[statusCode]
             });
             newMarker.addTo(layers[statusCode]);
             var quakeTitle = quake.properties.title;
             var quakeLink = quake.properties.url;
             var quakeMagnitude = quake.properties.mag;
+            var quakeRadius = Math.pow(10, quakeMagnitude)/30;
+            var quakeColor = quake.properties.alert.toLowerCase();
+            var circle = L.circle(latlong, {
+                radius: quakeRadius,
+                color: quakeColor,
+                fillOpacity: 0.5
+            })
+            .addTo(layers["MAGNITUDE"]);
             var quakePopup = `<a href="${quakeLink}">${quakeTitle}</a><br/>Magnitude: ${quakeMagnitude}`;
             newMarker.bindPopup(quakePopup);
         }

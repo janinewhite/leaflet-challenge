@@ -35,13 +35,13 @@
 }
 
 .marker-count {
-  color: black;
+  color: grey;
   line-height: .25;
   font-size: smaller;
 }
 
 .legend-header {
-  color: black;
+  color: grey;
   font-size: smaller;
   line-height: .25;
   font-weight: bold;

@@ -1,3 +1,4 @@
+// -*- coding: utf-8 -*-
 const significant_earthquakes_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson";
 const plates_json = "https://janinewhite.github.io/leaflet-challenge/assets/js/PB2002_plates.json";
 var start = [40.416775, -3.703790]
